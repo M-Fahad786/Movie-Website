@@ -112,8 +112,7 @@ function signIn() {
         } else {
           let storage = window.localStorage.getItem("input_values");
           let items = JSON.parse(storage);
-          
-          for (let key in storage) {
+          for (let key in items) {
             if (user_value.value !== items[0].name) {
               let error = document.getElementById("error");
               error.style.display = "block";
@@ -134,6 +133,19 @@ function signIn() {
                     error.style.display = "block";
                     conf_value.style.border = "1px solid red";
                   } else {
+                    let prev = localStorage.getItem("input_values");
+                    if (prev) {
+                      prev = JSON.parse(prev);
+                      console.log(prev);
+                      let simpleArray = [...prev];
+                      let newData = { auth: true };
+                      simpleArray.push(newData);
+                      localStorage.setItem(
+                        "input_values",
+                        JSON.stringify(simpleArray)
+                      );
+                      console.log(simpleArray);
+                    }
                     let main_container =
                       document.getElementById("sec-container");
                     main_container.style.display = "none";
@@ -225,7 +237,7 @@ function passLength() {
 
 function confirmLength() {
   let pass_length = document.getElementById("confirm");
-  if (userConfirm.value.length > 8) {
+  if (userConfirm.value.length >= 8) {
     pass_length.style.display = "none";
   } else {
     pass_length.style.display = "block";

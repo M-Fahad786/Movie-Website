@@ -13,103 +13,53 @@
   </head>
   <body>
     <!-- Navbar -->
-    <div class="wrapper">
-      <div class="nav-container">
-        <div class="nav">
-          <a href="#" class="logo">
-            <i class="fa-solid fa-clapperboard"></i>CinePlex
-          </a>
-          <ul class="navbar" id="nav">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Movies</a></li>
-            <li><a href="#">Book Now</a></li>
-            <li>
-              <button>Sign Out</button>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
+    <nav>
+      <div class="logo">CinePlex</div>
+      <input type="checkbox" id="click">
+      <label for="click" class="menu-btn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <ul>
+        <li><a class="active" href="#">Home</a></li>
+        <li><a href="#">Movies</a></li>
+        <li><a href="#">Book Tickets</a></li>
+        <li><a href="#" onClick="signOut()"><i class="fa-solid fa-right-from-bracket"></i>Sign Out</a></li>
+      </ul>
+    </nav>
 
-    <!-- Carousel -->
-    <div id="demo" class="carousel slide" data-bs-ride="carousel">
-      <!-- Indicators/dots -->
-      <div class="carousel-indicators">
-        <button
-          type="button"
-          data-bs-target="#demo"
-          data-bs-slide-to="0"
-          class="active"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#demo"
-          data-bs-slide-to="1"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#demo"
-          data-bs-slide-to="2"
-        ></button>
-      </div>
-
-      <!-- The slideshow/carousel -->
+    <!-- CAROUSEL -->
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img
-            src="../Images/puss in boot.jpg"
-            alt="Los Angeles"
-            class="d-block"
-            style="width: 100%"
-          />
+        <div class="carousel-item active" data-bs-interval="10000">
+          <img src="../Images/halloween.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img src="../Images/avataer.jpg" class="d-block w-100" alt="...">
         </div>
         <div class="carousel-item">
-          <img
-            src="../Images/halloween.jpg"
-            alt="Chicago"
-            class="d-block"
-            style="width: 100%"
-          />
-        </div>
-        <div class="carousel-item">
-          <img
-            src="../Images/maula jutt.jpg"
-            alt="New York"
-            class="d-block"
-            style="width: 100%"
-          />
+          <img src="../Images/puss in boot.jpg" class="d-block w-100" alt="...">
         </div>
       </div>
-
-      <!-- Left and right controls/icons  -->
-      <button
-        class="carousel-control-prev"
-        type="button"
-        data-bs-target="#demo"
-        data-bs-slide="prev"
-      >
-        <span class="carousel-control-prev-icon"></span>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
       </button>
-      <button
-        class="carousel-control-next"
-        type="button"
-        data-bs-target="#demo"
-        data-bs-slide="next"
-      >
-        <span class="carousel-control-next-icon"></span>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
       </button>
     </div>
     <!-- Movies Card -->
     <div class="movies">
       <header>Now Premiering</header>
     </div>
-
+    
     <div class="box">
       <div class="box-img">
         <img src="../Images/movie-2.png" alt="#" />
         <div class="details">
           <h3>Morbius</h2>
-        <button id="movie-1" onClick="onMovie1()"><a href="../Movie1/movie1.html"></a>Buy Ticket</button>
+        <button id="movie-1" onClick="onMovie1()">Buy Ticket</button>
         </div>
       </div>
 
@@ -137,19 +87,19 @@
         </div>
       </div>
 
-      <!-- <div class="box-img">
+      <div class="box-img"> 
         <img src="../Images/movie-4.png" alt="#" />
         <div class="details">
           <h3>Free Guy</h2>
-          <button id="movie-5">Buy Ticket</button>
+          <button id="movie-5" onClick="onMovie5()">Buy Ticket</button>
         </div>
-      </div>
+      </div> 
 
       <div class="box-img">
         <img src="../Images/movie-5.png" alt="#" />
         <div class="details">
           <h3>Batman</h2>
-          <button id="movie6">Buy Ticket</button>
+          <button id="movie-6" onClick="onMovie6()">Buy Ticket</button>
         </div>
       </div>
 
@@ -157,7 +107,7 @@
         <img src="../Images/movie-6.png" alt="#" />
         <div class="details">
           <h3>Uncharted</h2>
-          <button  id="movie-7">Buy Ticket</button>
+          <button  id="movie-7" onClick="onMovie7()">Buy Ticket</button>
         </div>
       </div>
 
@@ -165,7 +115,7 @@
         <img src="../Images/movie-7.png" alt="#" />
         <div class="details">
           <h3>Death On The Nile</h2>
-          <button  id="movie-8">Buy Ticket</button>
+          <button  id="movie-8" onClick="onMovie8()">Buy Ticket</button>
         </div>
       </div>
 
@@ -173,7 +123,7 @@
         <img src="../Images/movie-8.png" alt="#" />
         <div class="details">
           <h3>Kings Man</h2>
-          <button id="movie-9">Buy Ticket</button>
+          <button id="movie-9" onClick="onMovie9()">Buy Ticket</button>
         </div>
       </div>
 
@@ -181,7 +131,7 @@
         <img src="../Images/series-3.png" alt="#" />
         <div class="details">
           <h3>Viking Valhalla</h2>
-          <button  id="movie-10">Buy Ticket</button>
+          <button  id="movie-10" onClick="onMovie10()">Buy Ticket</button>
         </div>
       </div>
 
@@ -189,7 +139,7 @@
         <img src="../Images/upcoming-2.png" alt="#" />
         <div class="details">
           <h3>Doctor Strange MOM</h2>
-          <button  id="movie-11">Buy Ticket</button>
+          <button  id="movie-11" onClick="onMovie11()">Buy Ticket</button>
         </div>
       </div>
 
@@ -197,9 +147,9 @@
         <img src="../Images/upcoming-1.png" alt="#" />
         <div class="details">
           <h3>The NorthMan</h2>
-          <button  id="movie-12">Buy Ticket</button>
+          <button  id="movie-12" onClick="onMovie12()">Buy Ticket</button>
         </div>
-      </div> -->
+      </div>
 
     </div>
   </body>
