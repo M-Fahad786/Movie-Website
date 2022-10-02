@@ -1,0 +1,264 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+/* Code Formatting */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #221f1f;
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Lato", sans-serif;
+}
+
+/* Main Container */
+.movie {
+  background-color: #444451 !;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.movie h3 {
+  font-size: 25px;
+  letter-spacing: 5px;
+  padding: 5px;
+  text-transform: uppercase;
+}
+
+/* Movies Screen */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  perspective: 1000px;
+  margin-bottom: 20px;
+}
+
+.showcase {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #777;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.screen {
+  background-color: #fff;
+  height: 140px;
+  width: 100%;
+  margin: 15px 0;
+  transform: rotateX(-48deg);
+  box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+}
+
+/* Seats For Booking */
+.seat {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #444451;
+  width: 80px;
+  height: 60px;
+  margin: 3px;
+  font-size: 50px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* Selected Seats */
+.seat.selected {
+  background-color: green;
+}
+
+.seat:nth-of-type(2) {
+  margin-right: 18px;
+}
+
+.seat:nth-last-of-type(2) {
+  margin-left: 18px;
+}
+
+.seat:not(.sold):hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+/* Seat Available */
+.seat-avail {
+  background-color: #444451;
+  width: 60px;
+  height: 50px;
+  margin: 2px;
+  font-size: 50px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* Seat Sold */
+.seat-sold {
+  background-color: #e50914;
+  width: 60px;
+  height: 50px;
+  margin: 2px;
+  font-size: 50px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.showcase li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+}
+.showcase li small {
+  margin-left: 2px;
+}
+
+.row {
+  display: flex;
+}
+
+/* Validation Paras and Span */
+p {
+  font-size: 15px;
+  color: #fff;
+  text-align: center;
+  padding-top: 5px;
+  display: none;
+  padding-left: 25px;
+}
+
+span {
+  font-size: 15px;
+  color: #fff;
+  text-align: center;
+  padding-left: 8px;
+  display: none;
+  padding-top: 25px;
+}
+
+/* Media Queries */
+@media (max-width: 599px) and (min-width: 470px) {
+  .container .row .seat {
+    width: 60px;
+    height: 50px;
+  }
+  .movie h3 {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+  .seat-avail {
+    width: 40px;
+    height: 30px;
+  }
+  .seat-sold {
+    width: 40px;
+    height: 30px;
+  }
+  span {
+    font-size: 12px;
+    padding: 20px 0px 0px 7px;
+  }
+  p {
+    font-size: 15px;
+    padding: 4px 0px 0px 15px;
+  }
+}
+
+@media (max-width: 469px) and (min-width: 420px) {
+  .container .row .seat {
+    width: 55px;
+    height: 40px;
+  }
+  .movie h3 {
+    font-size: 18px;
+    margin-top: 30px;
+  }
+
+  .seat-avail {
+    width: 40px;
+    height: 30px;
+  }
+  .seat-sold {
+    width: 40px;
+    height: 30px;
+  }
+  span {
+    font-size: 11px;
+    padding: 17px 0px 0px 7px;
+  }
+  p {
+    font-size: 14px;
+    padding: 0px 0px 0px 14px;
+  }
+}
+
+@media (max-width: 419px) and (min-width: 350px) {
+  .container .row .seat {
+    width: 50px;
+    height: 45px;
+  }
+
+  .movie h3 {
+    font-size: 15px;
+    margin-top: 40px;
+  }
+
+  .seat-avail {
+    width: 40px;
+    height: 30px;
+  }
+  .seat-sold {
+    width: 40px;
+    height: 30px;
+  }
+  span {
+    font-size: 11px;
+    padding: 19px 0px 0px 5px;
+  }
+  p {
+    font-size: 13px;
+    padding: 5px 0px 0px 13px;
+  }
+}
+
+@media (max-width: 349px) and (min-width: 300px) {
+  .container .row .seat {
+    width: 45px;
+    height: 40px;
+  }
+
+  .movie h3 {
+    font-size: 12px;
+    margin-top: 40px;
+  }
+
+  .seat-avail {
+    width: 40px;
+    height: 30px;
+  }
+  .seat-sold {
+    width: 40px;
+    height: 30px;
+  }
+  span {
+    font-size: 10px;
+    padding: 19px 0px 0px 5px;
+  }
+  p {
+    font-size: 12px;
+    padding: 5px 0px 0px 12px;
+  }
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css"/>
+    <title>Log In</title>
+  </head>
+  <body>
+    <!-- HTML FOR FIRST FORM -->
+    <div id="container">
+        <header>Sign Up</header>
+        <form action="JavaScript:void(0)">
+            <div class="first-form"> 
+                <div class="personal-details">
+                    <span class="title">Personal Details</span>
+
+                    <div class="fields">
+                        <div class="input-fields">
+                            <label>UserName</label>
+                            <input type="text" id="username" placeholder="Enter UserName" onChange="onName()" onBlur="userLength()" >
+                            <p id="user-para">*This field is Required</p>
+                            <p id="email-length">*Please Provide Valid UserName of 5 alphabets </p>
+                        </div>
+
+                        <div class="input-fields">
+                            <label>Email</label>
+                            <input type="email" id="email" placeholder="Enter Email" onChange="onEmail()" onBlur="emailValid()">
+                            <p id="email-para">*This field is Required</p>
+                            <p id="email-valid">*Please Provide Valid Email</p>
+
+                        </div>
+
+                        <div class="input-fields">
+                            <label>Password</label>
+                            <input type="password" placeholder="Enter Password" id="password" onChange="onPassword()" onBlur="passLength()">
+                            <p id="pass-para">*This field is Required</p>
+                            <p id="pass">*Password must be of 8 characters</pid>
+                        </div>
+
+                        <div class="input-fields">
+                            <label>Confirm Password</label>
+                            <input type="password" placeholder="Enter Confirm Password" id="confirm-pass"onChange="onConfirm()" onBlur="confirmLength()" >
+                            <p id="confirm-para">*This field is Required</p>
+                            <p id="not-match">*Password Not Match</p>
+                            <p id="confirm">*Password must be of 8 characters</p>
+                        </div>
+
+                        <div class="input-fields">
+                            <label>Phone Number</label>
+                            <input type="number" placeholder="Enter Phone Number" id="number"onChange="onNumber()" onBLur="NumLength()">
+                            <p id="num-para">*This field is Required</p>
+                            <p id="num-length">*The Number must be of 11 Numbers</p>
+
+                        </div>
+
+                        <div class="input-fields">
+                            <label>Profile Picture</label>
+                            <input type="file"  id="pic" onChange="onPic()" accept="image/png, image/jpg">
+                            <p id="pic-para">*This field is Required</p>
+                        </div>
+                    </div>
+                    <button class="btn" onCLick="onLogin()">
+                        <span id="btn-text" class="btnText">Submit</span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+   <!-- HTML FOR SECOND FORM -->
+    <div id="sec-container">
+        <form id="sec-form" action="JavaScript:void(0)">
+            <h1>Sign In to your account</h1>
+            <div class="inp-field">
+                <div class="input-field">
+                   <label>UserName</label>
+                   <input type="text" placeholder="Enter UserName" id="user-value" onBlur="loginForm(this)">
+                   <p id="user-error">*This field is Required</p>
+               </div>
+               <div class="input-field">
+                   <label>Email</label>
+                   <input type="email" placeholder="Enter Email" id="email-value" onBlur="loginForm(this)" >
+                   <p id="email-error">*This field is Required</p>
+                </div>
+                <div class="input-field">
+                   <label>Password</label>
+                   <input type="text" placeholder="Enter Password" id="pass-value"  onBlur="loginForm(this)">
+                   <p id="pass-error">*This field is Required</p>
+               </div>
+                    <div class="input-field">
+                       <label>Confirm Password</label>
+                      <input type="text" placeholder="Enter Confirm Password" id="conf-value"  onBlur="loginForm(this)">
+                       <p id="confirm-error">*This field is Required</p>
+                    </div>
+                      <p id="error">*Invalid Username or Password </p>
+          </div>
+            <button type="submit" id="login" onClick="signIn()" class="btn">Log In </button>
+        </form>
+    </div>
+    <div class="loader" id="loader"></div>
+</body>
+  <script src="app.js"></script>
+</html>
